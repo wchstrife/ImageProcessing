@@ -36,6 +36,63 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void button8_Click(object sender, EventArgs e)
+        {
+            bool isSave = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = saveFileDialog1.FileName.ToString();
+
+                if (fileName != "" && fileName != null)
+                {
+                    string fileExtName = fileName.Substring(fileName.LastIndexOf(".") + 1).ToString();
+
+                    System.Drawing.Imaging.ImageFormat imgformat = null;
+
+                    if (fileExtName != "")
+                    {
+                        switch (fileExtName)
+                        {
+                            case "jpg":
+                                imgformat = System.Drawing.Imaging.ImageFormat.Jpeg;
+                                break;
+                            case "bmp":
+                                imgformat = System.Drawing.Imaging.ImageFormat.Bmp;
+                                break;
+                            case "gif":
+                                imgformat = System.Drawing.Imaging.ImageFormat.Gif;
+                                break;
+                            default:
+                                MessageBox.Show("只能存取为: jpg,bmp,gif 格式");
+                                isSave = false;
+                                break;
+                        }
+
+                    }
+
+                    //默认保存为JPG格式   
+                    if (imgformat == null)
+                    {
+                        imgformat = System.Drawing.Imaging.ImageFormat.Jpeg;
+                    }
+
+                    if (isSave)
+                    {
+                        try
+                        {
+                            this.pictureBox2.Image.Save(fileName, imgformat);
+                            //MessageBox.Show("图片已经成功保存!");   
+                        }
+                        catch
+                        {
+                            MessageBox.Show("保存失败,你还没有截取过图片或已经清空图片!");
+                        }
+                    }
+                }
+            }
+        }
+
         /**
          * 调节图像亮度，默认系数为0.6
          * */
@@ -252,6 +309,8 @@ namespace WindowsFormsApplication1
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
+
+        
 
     
        

@@ -42,6 +42,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -172,17 +174,37 @@
             // timer
             // 
             this.timer.AutoSize = true;
-            this.timer.Location = new System.Drawing.Point(812, 452);
+            this.timer.Location = new System.Drawing.Point(823, 452);
             this.timer.Name = "timer";
-            this.timer.Size = new System.Drawing.Size(55, 15);
+            this.timer.Size = new System.Drawing.Size(0, 15);
             this.timer.TabIndex = 11;
-            this.timer.Text = "label3";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(733, 452);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 15);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "运行时间：";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(12, 151);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(99, 34);
+            this.button8.TabIndex = 13;
+            this.button8.Text = "Save";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1063, 569);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.timer);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
@@ -221,6 +243,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label timer;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button8;
 
     }
 }
