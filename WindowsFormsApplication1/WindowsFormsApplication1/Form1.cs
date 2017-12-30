@@ -132,6 +132,59 @@ namespace WindowsFormsApplication1
                 pictureBox2.Image = newbitmap.Clone() as Image;
             }
         }
+    
+        /**
+         * 马赛克效果
+         * 默认的效果为2格
+         * */
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                newbitmap = bitmap.Clone() as Bitmap;
+                sw.Reset();
+                sw.Restart();
+                int RIDIO = 20;//马赛克的尺度，默认为周围两个像素
+                for (int h = 0; h < newbitmap.Height; h += RIDIO)
+                {
+                    for (int w = 0; w < newbitmap.Width; w += RIDIO)
+                    {
+                        int avgRed = 0, avgGreen = 0, avgBlue = 0;
+                        int count = 0;
+                        //取周围的像素
+                        for (int x = w; (x < w + RIDIO && x < newbitmap.Width); x++)
+                        {
+                            for (int y = h; (y < h + RIDIO && y < newbitmap.Height); y++)
+                            {
+                                Color pixel = newbitmap.GetPixel(x,y);
+                                avgRed += pixel.R;
+                                avgGreen += pixel.G;
+                                avgBlue += pixel.B;
+                                count++;
+                            }
+                        }
+
+                        //取平均值
+                        avgRed = avgRed / count;
+                        avgBlue = avgBlue / count;
+                        avgGreen = avgGreen / count;
+
+                        //设置颜色
+                        for (int x = w; (x < w + RIDIO && x < newbitmap.Width); x++)
+                        {
+                            for (int y = h; (y < h + RIDIO && y < newbitmap.Height); y++)
+                            {
+                                Color newColor = Color.FromArgb(avgRed, avgGreen ,avgBlue);
+                                newbitmap.SetPixel(x, y, newColor);
+                            }
+                        }
+                    }
+                }
+                sw.Stop();
+                timer.Text = sw.ElapsedMilliseconds.ToString();
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
 
     
        
