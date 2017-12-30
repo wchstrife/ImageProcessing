@@ -106,6 +106,33 @@ namespace WindowsFormsApplication1
             }
         }
 
+        /**
+         * 去色（灰度）
+         * */
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                newbitmap = bitmap.Clone() as Bitmap;
+                sw.Reset();
+                sw.Restart();
+                Color pixel;
+                int gray;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        pixel = newbitmap.GetPixel(x, y);
+                        gray = (int)(0.3 * pixel.R + 0.59 * pixel.G + 0.11 * pixel.B);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(gray, gray, gray));
+                    }
+                }
+                sw.Stop();
+                timer.Text = sw.ElapsedMilliseconds.ToString();
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
     
        
     }
