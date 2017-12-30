@@ -124,8 +124,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 38);
             this.button4.TabIndex = 7;
-            this.button4.Text = "De-Color";
+            this.button4.Text = "Relief";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -147,6 +148,7 @@
             this.button6.TabIndex = 9;
             this.button6.Text = "Spread";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 

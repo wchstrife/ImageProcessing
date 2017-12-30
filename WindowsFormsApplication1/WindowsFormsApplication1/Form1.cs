@@ -186,6 +186,73 @@ namespace WindowsFormsApplication1
             }
         }
 
+        /**
+         * 扩散效果
+         * */
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                newbitmap = bitmap.Clone() as Bitmap;
+                sw.Reset();
+                sw.Restart();
+                Color pixel;
+                int red, green, blue;
+                int flag = 0;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        Random ran = new Random();
+                        int RankKey = ran.Next(-5, 5);
+                        if (x + RankKey >= newbitmap.Width || y + RankKey >= newbitmap.Height || x + RankKey < 0 || y + RankKey < 0)
+                        {
+                            flag = 1;
+                            continue;
+                        }
+                        
+                        pixel = newbitmap.GetPixel(x + RankKey, y + RankKey);
+                        red = (int)(pixel.R);
+                        green = (int)(pixel.G);
+                        blue = (int)(pixel.B);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+                sw.Stop();
+                timer.Text = sw.ElapsedMilliseconds.ToString();
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
+        /**
+         * 浮雕效果
+         * */
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (bitmap != null)
+            {
+                newbitmap = bitmap.Clone() as Bitmap;
+                sw.Reset();
+                sw.Restart();
+                Color pixel;
+                int red, green, blue;
+                for (int x = 0; x < newbitmap.Width; x++)
+                {
+                    for (int y = 0; y < newbitmap.Height; y++)
+                    {
+                        pixel = newbitmap.GetPixel(x, y);
+                        red = (int)(255 - pixel.R);
+                        green = (int)(255 -  pixel.G);
+                        blue = (int)(255 - pixel.B);
+                        newbitmap.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+                sw.Stop();
+                timer.Text = sw.ElapsedMilliseconds.ToString();
+                pictureBox2.Image = newbitmap.Clone() as Image;
+            }
+        }
+
     
        
     }
