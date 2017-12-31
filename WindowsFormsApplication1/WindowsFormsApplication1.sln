@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{A0425932-2279-4B1E-B080-6B87D03F8692}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ImageProcessing", "ImageProcessing\ImageProcessing.vdproj", "{0BFCC17D-DD07-4C82-B1C2-AD1C425E8907}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,8 @@ Global
 		{A0425932-2279-4B1E-B080-6B87D03F8692}.Debug|x86.Build.0 = Debug|x86
 		{A0425932-2279-4B1E-B080-6B87D03F8692}.Release|x86.ActiveCfg = Release|x86
 		{A0425932-2279-4B1E-B080-6B87D03F8692}.Release|x86.Build.0 = Release|x86
+		{0BFCC17D-DD07-4C82-B1C2-AD1C425E8907}.Debug|x86.ActiveCfg = Debug
+		{0BFCC17D-DD07-4C82-B1C2-AD1C425E8907}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
