@@ -1,4 +1,4 @@
-#使用C#进行图像处理
+# 使用C#进行图像处理
 ## 前言
 之前一直认为图像处理是一件很高大上的事情，在一门选修课的课上遇到一个图像处理的作业，上手几个简单的图像处理的算法，也算是入了个最简单的门。
 界面简单而又丑陋，代码命名也比较随意，大家重点关注算法就好
@@ -44,7 +44,7 @@ gary = 0.3 * R + 0.59 * G + 0.11 * B
 ### 效果图
 ![这里写图片描述](http://img.blog.csdn.net/20180105194541506?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2Noc3RyaWZl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
 
-##浮雕
+## 浮雕
 ### 基本步骤
 浮雕效果就是把RGB三个颜色取反。
 具体的实现用255-当前颜色的分量
