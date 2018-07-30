@@ -12,7 +12,7 @@
 - 2个button作为文件打开和保存的触发器，
 - 1个label负责展示运行时间。
 
-![这里写图片描述](https://imgchr.com/i/PdU2hn)
+[![PdU2hn.png](https://s1.ax1x.com/2018/07/30/PdU2hn.png)](https://imgchr.com/i/PdU2hn)
 
 ## 文件打开与保存
 这里主要就是调用了openFileDialog和openFileDialog，不具体说。
